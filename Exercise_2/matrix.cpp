@@ -48,4 +48,15 @@ void Matrix<T>::Print() const
 	PrintRow(4);
 	PrintRow(5);
 }
-template 
+template <class T>
+T Matrix<T>::MaxValue() const
+{
+	T max = matrix[0][0];
+	for (int i = 0; i < 5;i++)
+		for (int j = 0; j < 7; j++)
+			if (matrix[i][j] > max)
+			{
+				max = matrix[i][j];
+			}
+	return max;
+}

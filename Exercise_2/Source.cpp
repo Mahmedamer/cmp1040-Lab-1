@@ -1,8 +1,14 @@
 #include<iostream>
 #include"matrix.cpp"
 using namespace std;
+ostream& operator<<(ostream& out, const Date& D)
+{
+	out << D.year << "/" << D.month << "/" << D.day;
+	return out;
+}
 int main()
 {
+	//DateMatrix m;
 	Matrix<Date> m;
 	for(int i = 0;i< 5;i++)
 		for (int j = 0; j < 7; j++)

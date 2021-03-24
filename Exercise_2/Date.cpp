@@ -1,4 +1,6 @@
 #pragma once
+#include<iostream>
+using namespace std;
 class Date {
 	int day, month, year;
 public:
@@ -7,4 +9,28 @@ public:
 	int getDay() const { return day; }
 	int getMonth() const { return month; }
 	int getYear() const { return year; }
+	// Operator Overloading
+	bool operator==(const Date& D2) const
+	{
+		if (year == D2.year && month == D2.month && day == D2.day)
+		{
+			return true;
+		}
+		return false;
+	}
+	bool operator>(const Date& D2) const
+	{
+		if (
+			(year > D2.year)
+			||
+			(year == D2.year && month > D2.month)
+			||
+			(year == D2.year && month == D2.month && day > D2.day)
+			)
+		{
+			return true;
+		}
+		return false;
+	}
+	friend ostream& operator<<(ostream&, const Date& );
 };
